@@ -15,6 +15,7 @@ urlFragment: functions-python-tensorflow-tutorial
 
 ### Activate virtualenv 
 
+1. `mkdir start`
 1. `cd start`
 1. `python -m venv .venv`
 1. `source .venv/bin/activate`
