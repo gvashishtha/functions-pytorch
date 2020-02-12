@@ -5,7 +5,7 @@ import sys
 
 scriptpath = os.path.abspath(__file__)
 scriptdir = os.path.dirname(scriptpath)
-filename = os.path.join(scriptdir, 'spam-rnn-classification.pt')
+filename = os.path.join(scriptdir, 'model.pt')
 
 n_hidden = 128
 rnn = RNN(n_feats, n_hidden, n_categories)
