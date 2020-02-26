@@ -47,7 +47,7 @@ import logging
 import json
 import azure.functions as func
 
-from .predict import predict
+from .predict import predict_image_from_url
 
 ```
 
@@ -55,33 +55,17 @@ from .predict import predict
 
 ```{py}
 def main(req: func.HttpRequest) -> func.HttpResponse:
-    
-    msg = req.params.get('message')
-    logging.info(f'Message received {msg}')
-    if not msg:
-        try:
-            req_body = req.get_json()
-        except ValueError:
-            pass
-        else:
-            msg = req_body.get('message')
+    image_url = req.params.get('img')
+    logging.info('Image URL received: ' + image_url)
 
-    if msg:
-        results = predict(msg)
-        results = results[0][1]
-        logging.info(f'results is {results}')
+    results = predict_image_from_url(image_url)
 
-        headers = {
-            "Content-type": "application/json",
-            "Access-Control-Allow-Origin": "*"
-        }
+    headers = {
+        "Content-type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+    }
 
-        return func.HttpResponse(json.dumps(results), headers = headers)
-    else:
-        return func.HttpResponse(
-             "Please pass a message on the query string or in the request body",
-             status_code=400
-        )
+    return func.HttpResponse(json.dumps(results), headers = headers)
 
 ```
 
