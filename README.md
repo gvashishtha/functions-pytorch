@@ -90,6 +90,11 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 1. Run `func start` from within the start folder with the virtual environment activated.
 1. Run `http://localhost:7071/api/classify?message=thisisatest`
 
+
+### Publish to Azure
+1. `func azure functionapp publish <appname> --build local`
+
+
 ## License
 
 See [LICENSE](LICENSE).
