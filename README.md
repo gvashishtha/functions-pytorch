@@ -84,7 +84,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 ### Publish to Azure
 1. `func azure functionapp publish <appname> --build local`
-
+1. Test by using the suggested URL and appending `&img=https://raw.githubusercontent.com/Azure-Samples/functions-python-tensorflow-tutorial/master/resources/assets/samples/cat1.png` at the end of the query string.
 
 ## License
 
