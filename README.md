@@ -41,6 +41,7 @@ https://download.pytorch.org/whl/cpu/torch-1.4.0%2Bcpu-cp37-cp37m-win_amd64.whl;
 https://download.pytorch.org/whl/cpu/torch-1.4.0%2Bcpu-cp37-cp37m-linux_x86_64.whl; sys_platform == 'linux' and python_version == '3.7'
 https://download.pytorch.org/whl/cpu/torch-1.4.0%2Bcpu-cp38-cp38-win_amd64.whl; sys_platform == 'win32' and python_version == '3.8'
 https://download.pytorch.org/whl/cpu/torch-1.4.0%2Bcpu-cp38-cp38-linux_x86_64.whl; sys_platform == 'linux' and python_version == '3.8'
+torchvision==0.5.0
 ```
 1. Install dependencies with `pip install --no-cache-dir -r requirements.txt`
 
@@ -78,7 +79,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 ### Run the local function
 
 1. Run `func start` from within the start folder with the virtual environment activated.
-1. Run `http://localhost:7071/api/classify?message=thisisatest`
+1. Run `http://localhost:7071/api/classify?img=https://raw.githubusercontent.com/Azure-Samples/functions-python-tensorflow-tutorial/master/resources/assets/samples/cat1.png`
 
 
 ### Publish to Azure
