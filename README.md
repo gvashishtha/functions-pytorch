@@ -81,12 +81,12 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 ### Run the local function
 
 1. Run `func start` from within the start folder with the virtual environment activated.
-1. Run `http://localhost:7071/api/classify?img=https://raw.githubusercontent.com/Azure-Samples/functions-python-tensorflow-tutorial/master/resources/assets/samples/cat1.png`
+1. Run `http://localhost:7071/api/classify?img=https://raw.githubusercontent.com/gvashishtha/functions-pytorch/master/resources/assets/Bernese-Mountain-Dog-Temperament-long.jpg`
 
 
 ### Publish to Azure
 1. `func azure functionapp publish <appname> --build local`
-1. Test by using the suggested URL and appending `&img=https://raw.githubusercontent.com/Azure-Samples/functions-python-tensorflow-tutorial/master/resources/assets/samples/cat1.png` at the end of the query string.
+1. Test by using the suggested URL and appending `&img=https://raw.githubusercontent.com/gvashishtha/functions-pytorch/master/resources/assets/Bernese-Mountain-Dog-Temperament-long.jpg` at the end of the query string.
 
 ## License
 
