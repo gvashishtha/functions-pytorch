@@ -4,14 +4,16 @@ languages:
 - python
 - html
 products:
-- azure
-description: "Make machine learning predictions with TensorFlow and Azure Functions"
-urlFragment: functions-python-tensorflow-tutorial
+- azure-functions
+description: "Predict ImageNet Classes with PyTorch and Azure Functions"
+urlFragment: functions-python-pytorch-tutorial
 ---
 
 # Make machine learning predictions with PyTorch and Azure Functions
 
 ## Run locally
+
+Note, the instructions below assume you are using a Linux environment.
 
 ### Activate virtualenv 
 
@@ -27,9 +29,9 @@ urlFragment: functions-python-tensorflow-tutorial
 
 ### Copy resources into the classify folder, assuming you run these commands from start
 
-1. `cp ../resources/model/* classify`
 1. `cp ../resources/predict.py classify`
-1. Add the following dependencies to start/requirements.txt:
+1. `cp ../resources/labels.txt classify`
+1. Add the following dependencies to start/requirements.txt, installing some numerical libraries and PyTorch itself:
 
 ```bash
 azure-functions
@@ -47,7 +49,7 @@ torchvision==0.5.0
 
 ### Update the function to run predictions
 
-1. Add an import statement to `classify/__init__.py`
+1. Add an `import` statement to `classify/__init__.py`
 
 ```{py}
 import logging
